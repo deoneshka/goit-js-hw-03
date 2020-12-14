@@ -9,8 +9,16 @@ const products = [
   { name: 'Захват', price: 1200, quantity: 2 },
 ];
 
-const calculateTotalPrice = function(allProdcuts, productName) {
+const calculateTotalPrice = function(allProducts, productName) {
+  let totalPrice = 0;
 
+  for (let product of allProducts) {
+    if (productName === product['name']) {
+      totalPrice = product['price'] * product['quantity'];
+    }
+  }
+
+  return totalPrice;
 };
 
 console.log(calculateTotalPrice(products, 'Радар')); // 5200
