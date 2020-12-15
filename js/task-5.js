@@ -13,11 +13,16 @@ const getAllPropValues = function (arr, prop) {
   const propValues = [];
 
   for (let i = 0; i < arr.length; i += 1) {
-    for (const key in arr[i]) {
-      if (prop === key) {
-        propValues.push(arr[i][key]);
-      }
+    if (arr[i][prop] !== undefined) {
+      propValues.push(arr[i][prop]);
     }
+
+
+    // for (const key in arr[i]) {
+    //   if (prop === key) {
+    //     propValues.push(arr[i][key]);
+    //   }
+    // }
   }
 
   return propValues;
